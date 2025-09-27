@@ -1,81 +1,149 @@
-# 📚 Project Configuration & Build Documentation
+# SocialFlow
 
-This documentation explains the configuration and build files of your Vite + React + TypeScript project. Each file plays a specific role, from tooling and linting to build output and dependency management. This guide will help you understand, maintain, and extend your development environment with confidence.
+[![TypeScript](https://img.shields.io/badge/TypeScript-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-informational?logo=react&logoColor=61DAFB)]()
+[![Next.js](https://img.shields.io/badge/Next.js-black?logo=nextdotjs&logoColor=white)]()
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)]()
 
----
 
-## .gitignore
+SocialFlow is a platform designed to streamline social media scheduling and auto-posting across multiple platforms. It leverages React, TypeScript, Next.js, and Tailwind CSS to provide a user-friendly and efficient experience for content creators.
 
-The **`.gitignore`** file tells Git which files and directories to ignore in version control. This helps avoid committing unnecessary or sensitive files.
+## 📌 Table of Contents
 
-### Ignored Items
+- [✨ Features](#-features)
+- [💻 Tech Stack](#-tech-stack)
+- [🛠️ Installation](#️-installation)
+- [🚀 Usage](#-usage)
+- [How to use](#how-to-use)
+- [🏗️ Project Structure](#️-project-structure)
+- [⚙️ Configuration](#️-configuration)
+- [📄 Configuration Files](#-configuration-files)
+- [📄 Summary Table](#-summary-table)
+- [🔗 Important Links](#-important-links)
+- [🤝 Contributing](#-contributing)
+- [⭐ Show Your Support](#-show-your-support)
 
-- **Logs**: Files ending with `.log`, `npm-debug.log*`, `yarn-debug.log*`, etc.
-- **Build Artifacts**: `node_modules`, `dist`, `dist-ssr`
-- **Local Configs**: Files ending with `.local`, `.env`
-- **Editor Files**: `.vscode/`, `.idea/`, `.DS_Store`, etc.
 
-```plaintext
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+## ✨ Features
 
-# Dependency directories
-node_modules
+- **Smart Scheduling:** AI-powered optimal posting times based on audience activity patterns.
+- **Multi-Platform Posting:** Automatic content adaptation for various social media platforms.
+- **Advanced Analytics:** Detailed insights into engagement, reach, and growth.
+- **Team Collaboration:** Approval workflows and role-based permissions for seamless teamwork.
+- **Animations and UI Elements**: Rich UI/UX features with Particles, Icons, and Framer Motion.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
 
-# Build output
-dist
-dist-ssr
+## 💻 Tech Stack
 
-# Local environment
-*.local
+- **Language:** TypeScript
+- **Framework:** React, Next.js
+- **Styling:** Tailwind CSS
+- **Bundler:** Vite
+- **Linting:** ESLint
+- **UI Libraries:** @radix-ui/react-slot, lucide-react, react-icons
+- **Animations:** framer-motion
+- **Particles:** tsparticles
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-.env
+## 🛠️ Installation
+
+1.  **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/Adityaphophale/SocialFlow.git
+   cd SocialFlow
+   ```
+
+2.  **Install dependencies:**
+
+   ```bash
+   npm install # or yarn install or pnpm install or bun install
+   ```
+
+## 🚀 Usage
+
+1.  **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+   This command starts the Vite development server, and you can view the application in your browser.
+
+2.  **Lint your code:**
+
+   ```bash
+   npm run lint
+   ```
+
+   This command runs ESLint to check for code quality and style issues.
+
+3.  **Build for production:**
+
+   ```bash
+   npm run build
+   ```
+
+   This command builds the application for production.
+
+4.  **Preview the production build:**
+
+   ```bash
+   npm run preview
+   ```
+
+   This command previews the production build locally.
+
+## How to use
+
+SocialFlow helps you schedule and auto-post to social media. To use it:
+
+1.  **Install the dependencies** using `npm install` or `yarn install` or `pnpm install` or `bun install`.
+2.  **Start the development server** using `npm run dev`.
+3.  **Navigate to the app** in your browser.
+4.  **Explore the features**, such as smart scheduling and multi-platform posting.
+5.  **Customize the application** by modifying the components in the `src` directory.
+
+## 🏗️ Project Structure
+
 ```
-**Key Points:**  
-- Keeps your repo clean and secure.
-- Prevents accidental commits of large or sensitive files.
-
----
-
-## postcss.config.js
-
-The **`postcss.config.js`** file configures [PostCSS](https://postcss.org), a tool for transforming CSS with JavaScript. It's often used for autoprefixing and integrating Tailwind CSS.
-
-```js
-export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};
+SocialFlow/
+├── .bolt/                       # Bolt configuration
+├── .eslintrc.cjs               # ESLint configuration
+├── .gitignore                   # Specifies intentionally untracked files that Git should ignore
+├── index.html                  # Main HTML entry point
+├── package.json                 # Project dependencies and scripts
+├── postcss.config.js          # PostCSS configuration
+├── README.md                   # Project documentation
+├── src/                       # Source code directory
+│   ├── App.tsx                # Main application component
+│   ├── index.css                # Global styles
+│   ├── main.tsx               # Entry point for React application
+│   ├── vite-env.d.ts            # Vite environment declaration
+│   ├── lib/                   # Utility functions
+│   │   └── utils.ts             # Utility functions like cn (classnames)
+│   ├── components/              # React components
+│   │   ├── ui/                # Reusable UI components
+│   │   │   ├── *              # Various UI components
+│   │   ├── sections/          # Website sections
+│   │   │   ├── *              # Various website sections
+├── tailwind.config.js         # Tailwind CSS configuration
+├── tsconfig.json              # TypeScript configuration
+├── tsconfig.app.json          # TypeScript configuration for app
+├── tsconfig.node.json         # TypeScript configuration for Node
+├── vite.config.ts             # Vite configuration
+└── yarn.lock                  # Records the versions of dependencies used in the project
 ```
-- **tailwindcss**: Enables Tailwind CSS utility classes.
-- **autoprefixer**: Adds vendor prefixes for broader browser compatibility.
 
----
+## ⚙️ Configuration
 
-## tailwind.config.js
+### tailwind.config.js
 
-This file customizes [Tailwind CSS](https://tailwindcss.com/) for your project.
+This file configures Tailwind CSS for the project, including custom themes, animations, and plugins.
 
-```js
-const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
+```javascript
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -94,12 +162,22 @@ module.exports = {
           '50%': { opacity: '1', transform: 'scale(1)' },
         },
         aurora: {
-          from: { backgroundPosition: "50% 50%, 50% 50%" },
-          to: { backgroundPosition: "350% 50%, 350% 50%" },
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
         },
         pulse: {
-          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-          '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+          '0%, 100%': {
+            opacity: '0.4',
+            transform: 'scale(1)',
+          },
+          '50%': {
+            opacity: '0.8',
+            transform: 'scale(1.05)',
+          },
         },
       },
     },
@@ -107,29 +185,24 @@ module.exports = {
   plugins: [addVariablesForColors],
 };
 
-// Adds Tailwind colors as CSS variables
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
-  addBase({ ":root": newVars });
+
+  addBase({
+    ":root": newVars,
+  });
 }
 ```
 
-**Highlights:**
-- **Content**: Specifies files to scan for Tailwind classes.
-- **Dark Mode**: Uses class-based toggling (`class`).
-- **Theme Extensions**: Adds custom animations and keyframes.
-- **Plugin**: Exposes all Tailwind colors as CSS custom properties (`var(--color-name)`).
+### eslint.config.js
 
----
+This file configures ESLint for the project, ensuring code quality and style consistency.
 
-## eslint.config.js
-
-The **`eslint.config.js`** file configures [ESLint](https://eslint.org/) for code quality and style.
-
-```js
+```javascript
 import js from '@eslint/js';
 import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -159,228 +232,12 @@ export default tseslint.config(
   }
 );
 ```
-**Key Points:**
-- **TypeScript Integration**: Uses `typescript-eslint` for linting TypeScript code.
-- **React Hooks**: Enforces best practices for React hooks.
-- **React Refresh**: Ensures components are exported correctly for hot reloading.
-- **Ignores `dist/`**: Skips the build output in linting.
 
----
+### vite.config.ts
 
-## index.html
+This file configures the Vite build tool for the project, including plugins, aliases, and dependency optimization.
 
-This is the main HTML entry point for your web application.
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SocialFlow - Schedule & Auto-Post to Social Media</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
-```
-
-**Features:**
-- Loads the React app into `<div id="root"></div>`.
-- Includes favicon and mobile responsiveness.
-- Loads the main JS module (`main.tsx`).
-
----
-
-## tsconfig.json
-
-This is the root [TypeScript](https://www.typescriptlang.org/) configuration file.
-
-```json
-{
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
-}
-```
-
-**Purpose:**
-- **Project References**: Enables [project references](https://www.typescriptlang.org/docs/handbook/project-references.html) for faster builds and better organization.
-- **Delegation**: Delegates TypeScript configuration to `tsconfig.app.json` (app code) and `tsconfig.node.json` (Node/Vite config).
-
----
-
-## tsconfig.node.json
-
-TypeScript configuration for Node.js/Vite-related files (like Vite config).
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2023"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": ["vite.config.ts"]
-}
-```
-
-**Key Settings:**
-- **Modern JS/TS**: Targets latest ECMAScript for Node.
-- **Strict Linting**: Ensures clean, error-free configs.
-- **No Output**: Does not emit compiled JS.
-
----
-
-## tsconfig.app.json
-
-TypeScript configuration for the main app source code.
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": ["src"]
-}
-```
-
-| Option                     | Purpose                                                     |
-|----------------------------|-------------------------------------------------------------|
-| `target`, `lib`            | ECMAScript and browser feature compatibility                |
-| `module`, `moduleResolution`| Modern module bundling                                     |
-| `jsx`                      | Enables JSX syntax for React                                |
-| `baseUrl`, `paths`         | Allows `@/` alias for easy imports                          |
-| `strict`, `noUnused*`      | Enforces strict type-checking and clean code                |
-| `noEmit`                   | Only type-check, don't output JS files                      |
-
----
-
-## package.json
-
-Defines your project’s dependencies, scripts, and metadata.
-
-```json
-{
-  "name": "vite-react-typescript-starter",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@radix-ui/react-slot": "^1.2.3",
-    "@tsparticles/engine": "^3.8.1",
-    "@tsparticles/react": "^3.0.0",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.23.2",
-    "lucide-react": "^0.344.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.5.0",
-    "tailwind-merge": "^3.3.1",
-    "tsparticles": "^3.8.1"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.9.1",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "^10.4.18",
-    "eslint": "^9.9.1",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.11",
-    "globals": "^15.9.0",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.3.0",
-    "vite": "^7.0.3"
-  }
-}
-```
-
-**Scripts**:
-| Script   | Description             |
-|----------|------------------------|
-| `dev`    | Start dev server       |
-| `build`  | Build for production   |
-| `lint`   | Run ESLint             |
-| `preview`| Preview production build|
-
-**Dependency Highlights**:
-- **React & TypeScript**: Modern React development with strong typing.
-- **Vite**: Fast build tool and dev server.
-- **Tailwind CSS**: Utility-first CSS framework.
-- **Particles, Icons, Animation**: Rich UI/UX features.
-
-### 📦 Install All Dependencies
-
-```packagemanagers
-{
-  "commands": {
-    "npm": "npm install",
-    "yarn": "yarn install",
-    "pnpm": "pnpm install",
-    "bun": "bun install"
-  }
-}
-```
-
----
-
-## package-lock.json
-
-This file **locks the exact versions** of all installed dependencies.  
-It ensures reproducible builds and consistent installs across different environments.
-
-- Managed automatically by npm.
-- Should be committed to your repository.
-
----
-
-## vite.config.ts
-
-The Vite configuration file customizes your project's build and development server with plugins and path aliases.
-
-```ts
+```typescript
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -399,80 +256,39 @@ export default defineConfig({
 });
 ```
 
-### Key Sections
-
-- **plugins**: Adds React fast-refresh and JSX support.
-- **resolve.alias**: Allows `@/` imports to reference `src/` directory.
-- **optimizeDeps.exclude**: Excludes `lucide-react` from dependency pre-bundling for compatibility reasons.
-
----
-
-### ⚙️ Build & Tooling Flow
-
-```mermaid
-flowchart TD
-    A[Project Source Code] -- import --> B[TypeScript]
-    B -- compiles to --> C[ESNext/ES2020 JS]
-    C -- processed by --> D[Vite]
-    D -- uses --> E[PostCSS + TailwindCSS]
-    E -- outputs --> F[Final Bundled Assets]
-    D -- serves --> G[Dev Server]
-    D -- builds --> H[Production Bundle]
-    F -- linked in --> I[index.html]
-    subgraph Linting
-      J[ESLint] -- checks --> A
-    end
-```
-
----
-
-## 📝 Summary Table
+## 📄 Configuration Files
 
 | File                  | Purpose                                                                                      |
 |-----------------------|----------------------------------------------------------------------------------------------|
-| .gitignore            | Ignore files/folders for Git                                                                 |
-| postcss.config.js     | CSS transforms – Tailwind, autoprefixer                                                      |
-| tailwind.config.js    | Tailwind CSS customization – content, theme, plugins                                         |
-| eslint.config.js      | ESLint rules for TS/React, hooks, and more                                                   |
-| index.html            | Main HTML entry point, loads React app                                                       |
-| tsconfig.json         | TypeScript project referencing                                                               |
-| tsconfig.node.json    | TS settings for Vite/Node config files                                                       |
-| tsconfig.app.json     | TS settings for app code, strictness, JSX, alias                                             |
-| package.json          | Project meta, dependencies, scripts                                                          |
-| package-lock.json     | Locked dependency versions for reproducible installs                                         |
-| vite.config.ts        | Vite build/dev settings, React plugin, path alias, dependencies optimization                  |
+| `.gitignore`            | Ignore files/folders for Git                                                                 |
+| `postcss.config.js`     | CSS transforms – Tailwind, autoprefixer                                                      |
+| `tailwind.config.js`    | Tailwind CSS customization – content, theme, plugins                                         |
+| `eslint.config.js`      | ESLint rules for TS/React, hooks, and more                                                   |
+| `index.html`            | Main HTML entry point, loads React app                                                       |
+| `tsconfig.json`         | TypeScript project referencing                                                               |
+| `tsconfig.node.json`    | TS settings for Vite/Node config files                                                       |
+| `tsconfig.app.json`     | TS settings for app code, strictness, JSX, alias                                             |
+| `package.json`          | Project meta, dependencies, scripts                                                          |
+| `vite.config.ts`        | Vite build/dev settings, React plugin, path alias, dependencies optimization                  |
 
----
+## 🤝 Contributing
 
-### 🚀 Getting Started
+Contributions are welcome! Please follow these steps:
 
-1. **Install dependencies** (see above).
-2. **Start development**:
-   ```bash
-   npm run dev
-   ```
-3. **Lint your code**:
-   ```bash
-   npm run lint
-   ```
-4. **Build for production**:
-   ```bash
-   npm run build
-   ```
-5. **Preview your build**:
-   ```bash
-   npm run preview
-   ```
+1.  Fork the repository.
+2.  Create a new branch for your feature or bug fix.
+3.  Make your changes and commit them with descriptive messages.
+4.  Push your changes to your fork.
+5.  Submit a pull request to the main repository.
 
----
+## 🔗 Important Links
 
-## 🎯 Best Practices & Extending
+-   **Repository:** [https://github.com/Adityaphophale/SocialFlow](https://github.com/Adityaphophale/SocialFlow)
 
-- **Use the `@/` alias** for cleaner imports.
-- **Add more ESLint rules** as your codebase grows.
-- **Customize Tailwind** via `tailwind.config.js` for branding and advanced theming.
-- **Leverage Vite plugins** for additional tooling (e.g., PWA, testing, etc.).
+## ⭐ Show Your Support
 
----
+If you find this project helpful, please consider:
 
-**Happy coding!** 🚀
+-   ⭐ Starring the repository on GitHub.
+-   📢 Sharing the project with others in your network.
+-   🙏 Supporting the author by contributing or providing feedback.
